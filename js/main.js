@@ -1,5 +1,5 @@
-import { tilt } from "/js/tilt.js";
-import { webglrender } from "/js/3Drender.js";
+import { tilt } from "js/tilt.js";
+import { webglrender } from "js/3Drender.js";
 
 /* Menu mobile */
 
