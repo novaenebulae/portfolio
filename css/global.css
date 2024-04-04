@@ -349,6 +349,10 @@ nav .menu {
   animation-name: slideInRight;
 }
 
+.hero__avatar img {
+  width: 100%;
+}
+
 @media screen and (max-width:749px) {
   .hero .grid {
     align-items: center;
@@ -365,8 +369,7 @@ nav .menu {
   }
 
   .hero__avatar img {
-    width: 65% !important;
-    border-radius: 10%;
+    max-width: 65%;
   }
 }
 
