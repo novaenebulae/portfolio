@@ -59,7 +59,7 @@ export function webglrender() {
             scene.add(model)
             scene.position.set(0, 0, 0)
             model.position.set(0, 0, 0)
-            model.position.y = -0.6
+            model.position.y = -0.3
         },
         (xhr) => {
             console.log((xhr.loaded / xhr.total * 100) + '% loaded')
