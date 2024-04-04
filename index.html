@@ -1,0 +1,702 @@
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.js"></script>
+
+  <title>PORTFOLIO - Lucas Olivarez</title>
+  <meta name="description" content="Portfolio numérique de Lucas OLIVAREZ. Développement informatique, art numérique.">
+
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/global.css">
+  <script src="./js/main.js" type="module" defer></script>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container d-flex">
+      <div class="logo">
+        <div>Lucas Olivarez</div>
+        <div>Art numérique</div>
+      </div>
+      <nav class="navbar ">
+        <ul class="menu list-unstyled">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#about">A propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="right">
+        <ul class="socials list-unstyled">
+          <li>
+            <a href="https://www.facebook.com/novaenebulae/" target="_blank">
+              <svg aria-hidden="true" class="icon facebook" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512">
+                <path fill="currentColor"
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/lucas-olivarez-6a51142ba/">
+              <svg aria-hidden="true" class="icon linkedin" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                </path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/novaenebulae/">
+              <svg aria-hidden="true" class="icon insta" focusable="false" data-prefix="fab" data-icon="instagram"
+                class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <button class="burger"><span class="bar"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="grid">
+        <div class="hero__item left js-tilt" data-tilt>
+          <span>Stagiaire Metz Numeric School</span>
+          <h1 class="title">Lucas Olivarez</h1>
+          <p>Passioné d'art numérique, musical et électronique</p>
+        </div>
+        <div class="hero__item right js-tilt" data-tilt>
+          <div class="hero__avatar">
+            <img src="./img/avatar.jpg" width="400" height="400" loading="lazy" alt="Lucas Olivarez - Photo de profil">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="grid">
+        <div class="grid__item" id="webgl-1__container">
+          <canvas class="webgl" id="webgl-1" style="cursor:grab"></canvas>
+        </div>
+        <div class="grid__item">
+          <h2 class="section-title">A propos</h2>
+          <h3>Qui suis-je ?</h3>
+          <p>Dans l'art numérique, je suis un développeur informatique passionné par <strong>la fusion
+              de
+              la
+              technologie et de la créativité
+              artistique</strong>.
+          </p>
+          <p>En tant qu'architecte numérique, je collabore étroitement avec des
+            <strong>artistes</strong> pour
+            concrétiser leurs visions à
+            travers des <strong>œuvres interactives et immersives</strong>.
+          </p>
+          <ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Mes services</h2>
+        <p>Ma maîtrise des <strong>langages de programmation</strong> et des <strong>technologies
+            émergentes</strong> me permet de concevoir
+          des installations
+          interactives, des expériences <strong>VR/AR et des animations uniques</strong>, repoussant ainsi
+          les limites de
+          l'expression artistique.</p>
+        <p>Je suis à la fois un <strong>créatif</strong> et un <strong>innovateur</strong>, travaillant en
+          étroite collaboration avec des professionnels de divers
+          horizons pour créer des <strong>expériences artistiques captivantes</strong> qui marquent
+          l'interaction humaine avec la technologie,
+          façonnant ainsi l'avenir de l'art numérique à l'échelle mondiale.
+        </p>
+      </div>
+      <div class="grid">
+        <div class="grid__item">
+          <div class="service">
+            <div class="service__icon js-tilt" data-tilt>
+              <svg width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z" />
+              </svg>
+            </div>
+            <div class="service__content">
+              <h3>INTÉGRATION DE TECHNOLOGIES AUDIOVISUELLES INTERACTIVES</h3>
+              <p>Développement de solutions innovantes permettant d'associer
+                des éléments visuels et sonores pour créer des expériences artistiques immersives et
+                interactives.</p>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service__icon js-tilt" data-tilt>
+              <svg width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M500.3 7.3C507.7 13.3 512 22.4 512 32V176c0 26.5-28.7 48-64 48s-64-21.5-64-48s28.7-48 64-48V71L352 90.2V208c0 26.5-28.7 48-64 48s-64-21.5-64-48s28.7-48 64-48V64c0-15.3 10.8-28.4 25.7-31.4l160-32c9.4-1.9 19.1 .6 26.6 6.6zM74.7 304l11.8-17.8c5.9-8.9 15.9-14.2 26.6-14.2h61.7c10.7 0 20.7 5.3 26.6 14.2L213.3 304H240c26.5 0 48 21.5 48 48V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V352c0-26.5 21.5-48 48-48H74.7zM192 408a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM478.7 278.3L440.3 368H496c6.7 0 12.6 4.1 15 10.4s.6 13.3-4.4 17.7l-128 112c-5.6 4.9-13.9 5.3-19.9 .9s-8.2-12.4-5.3-19.2L391.7 400H336c-6.7 0-12.6-4.1-15-10.4s-.6-13.3 4.4-17.7l128-112c5.6-4.9 13.9-5.3 19.9-.9s8.2 12.4 5.3 19.2zm-339-59.2c-6.5 6.5-17 6.5-23 0L19.9 119.2c-28-29-26.5-76.9 5-103.9c27-23.5 68.4-19 93.4 6.5l10 10.5 9.5-10.5c25-25.5 65.9-30 93.9-6.5c31 27 32.5 74.9 4.5 103.9l-96.4 99.9z" />
+              </svg>
+            </div>
+            <div class="service__content">
+              <h3>CRÉATION D'ANIMATIONS NUMÉRIQUES PERSONNALISÉES</h3>
+              <p>Développement d'animations sur mesure pour accompagner les œuvres
+                d'art numérique, ajoutant une dimension dynamique et captivante à l'expérience
+                artistique.</p>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service__icon js-tilt" data-tilt>
+              <svg width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z" />
+              </svg>
+            </div>
+            <div class="service__content">
+              <h3>DÉVELOPPEMENT D'APPLICATIONS MUSICALES INTERACTIVES</h3>
+              <p>Conception et programmation
+                d'applications qui exploitent la musique
+                numérique et les interfaces interactives pour offrir des expériences sonores uniques et
+                engageantes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item">
+          <div class="service">
+            <div class="service__icon js-tilt" data-tilt>
+              <svg width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
+              </svg>
+            </div>
+            <div class="service__content">
+              <h3>COORDINATION ET MISE EN PLACE D'INSTALLATIONS SCÉNIQUES INTERACTIVES</h3>
+              <p>Assurer la planification et la mise en œuvre
+                d'installations artistiques intégrant des composantes numériques et musicales pour des
+                performances live ou des
+                expositions artistiques.</p>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service__icon js-tilt" data-tilt>
+              <svg width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path
+                  d="M533.6 32.5C598.5 85.2 640 165.8 640 256s-41.5 170.7-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z" />
+              </svg>
+            </div>
+            <div class="service__content">
+              <h3>PERFORMANCES ARTISTIQUES MULTIMÉDIAS EN DIRECT</h3>
+              <p>Création et présentation de performances live combinant musique
+                originale, éléments visuels et effets sonores pour offrir des expériences sensorielles
+                immersives.</p>
+            </div>
+          </div>
+          <div class="service">
+            <div class="service__icon js-tilt" data-tilt>
+              <svg width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path
+                  d="M64 64a64 64 0 1 1 128 0A64 64 0 1 1 64 64zM25.9 233.4C29.3 191.9 64 160 105.6 160h44.8c27 0 51 13.4 65.5 34.1c-2.7 1.9-5.2 4-7.5 6.3l-64 64c-21.9 21.9-21.9 57.3 0 79.2L192 391.2V464c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V348.3c-26.5-9.5-44.7-35.8-42.2-65.6l4.1-49.3zM448 64a64 64 0 1 1 128 0A64 64 0 1 1 448 64zM431.6 200.4c-2.3-2.3-4.9-4.4-7.5-6.3c14.5-20.7 38.6-34.1 65.5-34.1h44.8c41.6 0 76.3 31.9 79.7 73.4l4.1 49.3c2.5 29.8-15.7 56.1-42.2 65.6V464c0 26.5-21.5 48-48 48H496c-26.5 0-48-21.5-48-48V391.2l47.6-47.6c21.9-21.9 21.9-57.3 0-79.2l-64-64zM272 240v32h96V240c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l64 64c9.4 9.4 9.4 24.6 0 33.9l-64 64c-6.9 6.9-17.2 8.9-26.2 5.2s-14.8-12.5-14.8-22.2V336H272v32c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-64-64c-9.4-9.4-9.4-24.6 0-33.9l64-64c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2z" />
+              </svg>
+            </div>
+            <div class="service__content">
+              <h3>COLLABORATION ARTISTIQUE MULTIDISCIPLINAIRE</h3>
+              <p>Partenariat avec d'autres artistes, designers, développeurs et
+                professionnels créatifs pour créer des projets collaboratifs uniques qui fusionnent la
+                musique, l'art visuel et la
+                technologie numérique.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Mes compétences</h2>
+      </div>
+
+      <div class="grid">
+        <div class="grid__item">
+          <h3>Domaines de compétences</h3>
+          <ul class="list-unstyled">
+            <li class="js-tilt" data-tilt>
+              <h4>Traitement du signal audio et des médias numériques</h4>
+              <p> Synthèse sonore, traitement des effets audio, manipulation d'images et de vidéos en
+                temps réel avec différents outils :
+                Resolume, Processing, openFrameworks, Pure Data...</p>
+            </li>
+            <li class="js-tilt" data-tilt>
+              <h4>Régie technique</h4>
+              <p>Systèmes de sonorisation, d'éclairage, de projection vidéo, ainsi que logiciels et outils
+                spécialisés.</p>
+            </li>
+            <li class="js-tilt" data-tilt>
+              <h4>Design UX / UI</h4>
+              <p>Conception d'interfaces interactives intuitives qui permettent aux utilisateurs
+                d'explorer et de manipuler des contenus visuels et sonores de manière fluide et
+                engageante.</p>
+            </li>
+            <li class="js-tilt" data-tilt>
+              <h4>Création artistique</h4>
+              <p>Collaboration avec des artistes, musiciens et designers.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid__item">
+          <h3>Compétences en Développement</h3>
+          <div class="progressbar">
+            <div class="bar" data-width="70">JAVA</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="85">C++</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="60">JAVASCRIPT</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="90">PYTHON</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="75">Max/MSP</div>
+          </div>
+          <h3>Compétences en création artistique</h3>
+          <div class="progressbar">
+            <div class="bar" data-width="100">ABLETON</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="90">RESOLUME</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="70">ADOBE PREMIERE</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="70">PROCESSING</div>
+          </div>
+          <div class="progressbar">
+            <div class="bar" data-width="60">PURE DATA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Porfolio</h2>
+      </div>
+
+      <ul class="grid portfolio-filters list-unstyled">
+        <li class="grid__item">
+          <a href="#" data-filter="all">Tous les projets</a>
+        </li>
+        <li class="grid__item">
+          <a href="#" data-filter="event">Évenements </a>
+        </li>
+        <li class="grid__item">
+          <a href="#" data-filter="prod">Production </a>
+        </li>
+        <li class="grid__item">
+          <a href="#" data-filter="creation">Créations </a>
+        </li>
+      </ul>
+
+      <div class="grid">
+        <div class="grid__item">
+          <div class="card js-tilt" data-category="event" data-tilt>
+            <img src="https://picsum.photos/600/400?random=1" loading="lazy" width="365" height="243"
+              alt="projet de la ville" class="card__image">
+            <div class="card__inner">
+              <h3 class="card__title">Soirées ECLIPSE</h3>
+              <p class="category">Évenement</p>
+            </div>
+            <div class="card__overlay">
+              <a href="#" class="card__link" data-id="modal-1">+</a>
+            </div>
+          </div>
+          <div class="modal" id="modal-1">
+            <button class="modal__close">&times;</button>
+
+            <div class="modal__content">
+
+              <div class="container">
+                <div class="grid">
+                  <div class="grid__item">
+                    <img src="https://picsum.photos/600/400?random=2" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                    <img src="https://picsum.photos/600/400?random=22" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet culturel" />
+                  </div>
+                  <div class="grid__item">
+                    <h4 class="modal__title h2">Régie technique des soirées ECLIPSE</h4>
+                    <p>
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="far"
+                        data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                          d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z">
+                        </path>
+                      </svg>
+                      <i>Année : 2024</i>
+                    </p>
+                    <p class="category">
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag"
+                        class="svg-inline--fa fa-tag fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z">
+                        </path>
+                      </svg>
+                      Régie son, lumière et vidéo
+                    </p>
+                    <p>
+                      Mise en place et régie des soirées ECLIPSE de l'association Pleine Lune crée en 2024 et basée à
+                      Metz.
+
+                    </p>
+
+                    <h5 class="h3">Informations</h5>
+                    <p>
+                      Direction artistique des soirées, création des programmes lumières, sonorisation de la soirée,
+                      mapping vidéo et VJing.
+                    </p>
+
+                    <h5 class="h3">Technologies</h5>
+
+                    <ul>
+                      <li>Resolume</li>
+                      <li>DMX</li>
+                      <li>Lasers</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item">
+          <div class="card js-tilt" data-tilt data-category="creation">
+            <img src="https://picsum.photos/600/400?random=2" loading="lazy" width="365" height="243"
+              alt="projet de la ville" class="card__image">
+            <div class="card__inner">
+              <h3 class="card__title">Showcase à la Face Cachée</h3>
+              <p class="category">Création originale</p>
+            </div>
+            <div class="card__overlay">
+              <a href="#" class="card__link" data-id="modal-2">+</a>
+            </div>
+          </div>
+          <div class="modal" id="modal-2">
+            <button class="modal__close">&times;</button>
+
+            <div class="modal__content">
+
+              <div class="container">
+                <div class="grid">
+                  <div class="grid__item">
+                    <img src="https://picsum.photos/600/400?random=2" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                    <img src="https://picsum.photos/600/400?random=22" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                  </div>
+                  <div class="grid__item">
+                    <h4 class="modal__title h2">Showcase à la Face Cachée</h4>
+                    <p>
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="far"
+                        data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                          d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z">
+                        </path>
+                      </svg>
+                      <i>Année : 2021</i>
+                    </p>
+                    <p class="category">
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag"
+                        class="svg-inline--fa fa-tag fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z">
+                        </path>
+                      </svg>
+                      Création originale, direction artistique
+                    </p>
+                    <p>
+                      Représentation musicale et visuelle à la Face Cachée (disquaire à Metz). Musique électronique.
+                    </p>
+
+                    <h5 class="h3">Informations</h5>
+                    <p>
+                      Génération sonore avec l'aide de différents instruments électroniques ( synthétiseurs, boites à
+                      rythme ), mapping vidéo.
+                    </p>
+
+                    <h5 class="h3">Technologies</h5>
+
+                    <ul>
+                      <li>Ableton</li>
+                      <li>Resolume</li>
+                      <li>Synthèse sonore</li>
+                      <li>Electronique appliquée</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item">
+          <div class="card js-tilt" data-tilt data-category="prod">
+            <img src="https://picsum.photos/600/400?random=3" loading="lazy" width="365" height="243"
+              alt="projet de la ville" class="card__image">
+            <div class="card__inner">
+              <h3 class="card__title">Label CLOU</h3>
+              <p class="category">Production</p>
+            </div>
+            <div class="card__overlay">
+              <a href="#" class="card__link" data-id="modal-3">+</a>
+            </div>
+          </div>
+          <div class="modal" id="modal-3">
+            <button class="modal__close">&times;</button>
+
+            <div class="modal__content">
+
+              <div class="container">
+                <div class="grid">
+                  <div class="grid__item">
+                    <img src="https://picsum.photos/600/400?random=2" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                    <img src="https://picsum.photos/600/400?random=22" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                  </div>
+                  <div class="grid__item">
+                    <h4 class="modal__title h2">Direction de la production et régie technique pour CLOU</h4>
+                    <p>
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="far"
+                        data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                          d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z">
+                        </path>
+                      </svg>
+                      <i>Année : 2019 - 2021</i>
+                    </p>
+                    <p class="category">
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag"
+                        class="svg-inline--fa fa-tag fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z">
+                        </path>
+                      </svg>
+                      Technicien production musicale, direction artistique, régie technique
+                    </p>
+                    <p>
+                      Dans le cadre du label CLOU basé à Metz, enregistrement et production d'artistes musicaux.
+                      Reproduction sur différents supports ( cassettes, vinyles, CD ), régie sonore lors des différents
+                      évenements, direction artistique du label.
+                    </p>
+
+                    <h5 class="h3">Informations</h5>
+                    <p>
+                      Construction d'un studio d'enregistrement, production d'artistes (Divojugend, La Bergerie, Mesa Of
+                      The Lost Women...), gestion des machines de reproduction audio, gestion des artistes et
+                      organisation des représentations.
+                    </p>
+
+                    <h5 class="h3">Technologies</h5>
+
+                    <ul>
+                      <li>Ableton</li>
+                      <li>Techniques du son</li>
+                      <li>Adobe premiere</li>
+                      <li>Logiciel de création visuelle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item">
+          <div class="card js-tilt" data-tilt data-category="event">
+            <img src="https://picsum.photos/600/400?random=4" loading="lazy" width="365" height="243"
+              alt="projet de la ville" class="card__image">
+            <div class="card__inner">
+              <h3 class="card__title">Association Chateau 404</h3>
+              <p class="category">Organisation d'évenements, production</p>
+            </div>
+            <div class="card__overlay">
+              <a href="#" class="card__link" data-id="modal-4">+</a>
+            </div>
+          </div>
+          <div class="modal" id="modal-4">
+            <button class="modal__close">&times;</button>
+
+            <div class="modal__content">
+
+              <div class="container">
+                <div class="grid">
+                  <div class="grid__item">
+                    <img src="https://picsum.photos/600/400?random=2" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                    <img src="https://picsum.photos/600/400?random=22" loading="lazy" width="560" height="373"
+                      class="card__image" alt="Projet site de la ville de lyon" />
+                  </div>
+                  <div class="grid__item">
+                    <h4 class="modal__title h2">Organisation d'évènements au sein de l'association du Chateau 404</h4>
+                    <p>
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="far"
+                        data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                          d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z">
+                        </path>
+                      </svg>
+                      <i>Année : 2018 - 2021</i>
+                    </p>
+                    <p class="category">
+                      <svg width="15" height="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag"
+                        class="svg-inline--fa fa-tag fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z">
+                        </path>
+                      </svg>
+                      Organisation évenementielle, sonorisation
+                    </p>
+                    <p>
+                      Collaboration avec le lieu culturel "Chateau 404" situé à Metz, mise en place d'évenements
+                      artistiques et musicaux, gestion du public.
+                    </p>
+
+                    <h5 class="h3">Informations</h5>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Quaerat accusantium laborum aliquam enim. Vero
+                      voluptate, animi, sint vel mollitia ut odio, eius quis
+                      expedita quo at! Dignissimos ipsum odit dolores!
+                    </p>
+
+                    <h5 class="h3">Technologies</h5>
+
+                    <ul>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <p>Si vous êtes intéressés par mes projets, n'hésitez pas à me contacter avec le formulaire suivant :
+        </p>
+      </div>
+
+      <form action="https://formsubmit.io/send/lucas.olivarez@stagiairesmns.fr" method="POST" class="form">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+
+        <label for="firstname">
+          <input type="text" name="firstname" id="firstname" placeholder="Nom" required>
+        </label>
+        <label for="lastname">
+          <input type="text" name="lastname" id="lastname" placeholder="Prénom">
+        </label>
+        <label for="email">
+          <input type="email" name="email" id="email" placeholder="Email" required>
+        </label>
+        <textarea name="message" id="message" placeholder="Message"></textarea>
+        <input type="submit" class="btn" value="Envoyer">
+      </form>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div class="grid__item">
+          <p>Lucas Olivarez</p>
+        </div>
+        <div class="grid__item">
+          <ul class="socials list-unstyled">
+            <li><a href="https://www.linkedin.com/in/lucas-olivarez-6a51142ba/" target="_blank">
+                <svg aria-hidden="true" class="icon linkedin" focusable="false" data-prefix="fab"
+                  data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor"
+                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                  </path>
+                </svg>
+              </a></li>
+            <li><a href="https://www.facebook.com/novaenebulae/" target="_blank">
+                <svg aria-hidden="true" class="icon facebook" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                  class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512">
+                  <path fill="currentColor"
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                  </path>
+                </svg>
+              </a></li>
+            <li><a href="https://www.instagram.com/novaenebulae/" target="_blank">
+                <svg aria-hidden="true" class="icon insta" focusable="false" data-prefix="fab" data-icon="instagram"
+                  class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512">
+                  <path fill="currentColor"
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                  </path>
+                </svg>
+              </a></li>
+          </ul>
+        </div>
+
+        <div class="grid__item">
+          <p>Copyright © 2024 - Lucas Olivarez. Tous droits réservés.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
