@@ -20,16 +20,6 @@ export function webglrender() {
     camera.position.z = -10;
     scene.add(camera);
 
-    // Directional light
-
-    const light1 = new THREE.DirectionalLight('#ffffff', 1);
-    scene.add(light1);
-    light1.position.set(0, 0.75, 4);
-
-    const light2 = new THREE.DirectionalLight('#ffffff', 1);
-    scene.add(light2);
-    light2.position.set(0, 0, -4);
-
     // Ambient light
 
     const ambient = new THREE.AmbientLight(0xFFFFFF);
@@ -69,7 +59,7 @@ export function webglrender() {
             scene.add(model)
             scene.position.set(0, 0, 0)
             model.position.set(0, 0, 0)
-            model.position.y = -0.3
+            model.position.y = -0.4
         },
         (xhr) => {
             console.log((xhr.loaded / xhr.total * 100) + '% loaded')
