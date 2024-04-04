@@ -30,8 +30,8 @@ export function webglrender() {
     //Controls
     const controls = new THREE.OrbitControls(camera, canvas);
     controls.enableDamping = true;
-    controls.enableZoom = true;
-    controls.enablePan = true;
+    controls.enableZoom = false;
+    controls.enablePan = false;
     controls.minDistance = 20;
     controls.maxDistance = 20;
     controls.minPolarAngle = Math.PI / 10;

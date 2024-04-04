@@ -148,13 +148,19 @@ section {
   z-index: 1;
 }
 
-.header .logo {
+.header .logo__desktop {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.header .logo__mobile {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 2rem;
   letter-spacing: 2px;
 }
-
 
 .header li {
   display: inline-flex;
@@ -232,7 +238,37 @@ nav .menu {
   width: 100%;
 }
 
-@media screen and (max-width:749px) {
+.logo__mobile {
+  display: block;
+}
+
+.logo__desktop {
+  display: none;
+}
+
+@media screen and (min-width:1000px) {
+  .logo__desktop {
+    display: block;
+  }
+
+  .logo__mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width:799px) {
+  .header .container {
+    margin: 0rem 0rem;
+  }
+
+  .header .logo__mobile {
+    display: block;
+  }
+
+  /* .header .logo__mobile div {
+    margin-left: 1rem;
+  } */
+
   nav {
     display: flex;
     justify-content: center;
@@ -299,13 +335,19 @@ nav .menu {
   }
 }
 
-@media screen and (min-width:750px) {
+@media screen and (min-width:800px) {
   .navbar {
     display: flex;
   }
 
   .burger {
     display: none;
+  }
+}
+
+@media screen and (max-width:300px) {
+  .header .logo__mobile {
+    font-size: 1rem;
   }
 }
 
